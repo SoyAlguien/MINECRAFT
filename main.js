@@ -1,4 +1,4 @@
-canvas = new fabric.Canvas("MyCanvas")
+canvas = new fabric.Canvas("myCanvas")
 ancho = 30
 alto = 30
 x = 500
@@ -26,6 +26,7 @@ function actualizar_block(img) {
 window.addEventListener("keydown", tecla)
 function tecla(e) {
     codigo = e.keyCode;
+    tecla = e.key;
     if (codigo == "40" && y < 600) {
         y = y + alto
         canvas.remove(jugador)
@@ -46,8 +47,44 @@ function tecla(e) {
         canvas.remove(jugador)
         actualizar_jugador()
     }
+    if(tecla == "1"){
+        actualizar_block("cloud.jpg")
+    }
+    if(tecla == "2"){
+        actualizar_block("dark_green.png")
+    }
+    if(tecla == "3"){
+        actualizar_block("ground.png")
+    }
+    if(tecla == "4"){
+        actualizar_block("light_green.png")
+    }
+    if(tecla == "5"){
+        actualizar_block("roof.jpg")
+    }
+    if(tecla == "6"){
+        actualizar_block("trunk.jpg")
+    }
+    if(tecla == "7"){
+        actualizar_block("unique.png")
+    }
+    if(tecla == "8"){
+        actualizar_block("wall.jpg")
+    }
+
+    if(tecla == "9"){
+        actualizar_block("yellow_wall.png")
+    }
+    if(e.shiftKey&&tecla=="+"){
+        ancho=ancho+10
+        alto=alto+10
+        document.getElementById("ancho").innerHTML=ancho
+        document.getElementById("alto").innerHTML=alto    
+    }
+    if(e.shiftKey&&tecla=="-"){
+        ancho=ancho-10
+        alto=alto-10
+        document.getElementById("ancho").innerHTML=ancho
+        document.getElementById("alto").innerHTML=alto    
+    }
 }
-
-
-
-
